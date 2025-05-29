@@ -1,10 +1,9 @@
 <div class="ct_dashbaord_bg">
-    <div class="ct_dashbaord_main">
-        <app-sidebar />
-<div class="ct_content_right">
-<app-header/>
-        <router-outlet />
-</div>
-          
+    <div class="ct_dashbaord_main" [ngClass]="{ 'ct_active': isMenuActive }">
+        <app-sidebar (toggleEvent)="closeMenu($event)"/>
+        <div class="ct_content_right">
+            <app-header (toggleEvent)="openMenu($event)"/>
+            <router-outlet />
+        </div>
     </div>
 </div>

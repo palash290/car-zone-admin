@@ -1,5 +1,5 @@
 <div class="ct_dashboard_head justify-content-between gap-4">
-    <div class="ct_toggle_side">
+    <div class="ct_toggle_side" (click)="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -26,7 +26,7 @@
                         class="ct_img_30">
                     <div class="text-start">
                         <!-- <p class="mb-0 ct_fw_500">Alice Johnson</p> -->
-                        <small class="ct_text_939393">{{firstName}} {{lastName}}</small>
+                        <p class="ct_text_939393 mb-0">{{firstName}} {{lastName}}</p>
                     </div>
                 </div>
                 <i class="fa-solid fa-angle-down ms-auto"></i>
@@ -98,7 +98,7 @@
                                 again.</p>
                         </figcaption>
                     </figure>
-                    <div class="d-flex justify-content-center border-0 gap-3 ct_modal_footer">
+                    <div class="d-flex justify-content-center border-0 gap-3 mt-4 ct_modal_footer">
                         <button type="button" class="ct_outline_btn ct_h_40 w-100 ct_fw_600"
                             data-bs-dismiss="modal">Cancel</button>
 

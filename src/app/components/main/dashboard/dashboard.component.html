@@ -66,12 +66,12 @@
         <div class="row ct_mt_30">
             <div class="col-xxl-4 col-xl-6 col-lg-12  mb-4 mb-xxl-0" *ngFor="let item of cars; let i = index">
                 <figure class="ct_card_listed_card">
-                    <p class="mb-0 ct_fw_600">{{item.carModel}}</p>
+                    <p class="mb-2 ct_fw_600">{{item.carModel}}</p>
                     <img [src]="item.carImages ? item.carImages : 'assets/img/no_car.png'" alt="">
                     <figcaption class="mt-3">
                         <h4 class="ct_fs_24 ct_fw_600">{{item.brandName}}</h4>
                         <div class="d-flex align-items-center justify-content-between gap-2 ct_flex_column_767">
-                            <ul class="d-flex align-items-center gap-2">
+                            <ul class="d-flex align-items-center gap-2 mb-0">
                                 <li>
                                     <p class="mb-0">{{item.selectYear}}</p>
                                 </li>

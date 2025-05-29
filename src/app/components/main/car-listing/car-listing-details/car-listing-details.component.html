@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xxl-8 mb-4 mb-xxl-0">
+        <div class="col-xl-8 mb-4 mb-xl-0">
             <h4 class="ct_fs_28 ct_fw_600 mb-3 ">{{carData?.brandName}}</h4>
             <!-- <ul class="d-flex align-items-center gap-3 flex-wrap">
                 <li>
@@ -121,7 +121,7 @@
             </div>
 
             <!-- Thumbnail Swiper -->
-            <div class="swiper mySwiperThumbs mt-3">
+            <div class="swiper mySwiperThumbs ct_card_small_thumb  mt-3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" *ngFor="let img of images">
                         <img [src]="img" />
@@ -149,7 +149,7 @@
                 </p>
             </div>
         </div>
-        <div class="col-xxl-4 mb-xxl-0">
+        <div class="col-xl-4 mb-xl-0">
             <div class="ct_black_bg mb-4">
                 <h5 class="mb-0 text-center text-white">{{carData?.carModel}}</h5>
             </div>
@@ -159,21 +159,21 @@
                     <li class="ct_fw_300 py-2 px-2">MILEAGE:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carMileage ? carData?.carMileage : '-'}} km</li>
                     <li class="ct_fw_300 py-2 px-2">CONDITION:</li>
-                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carCondition ? carData?.carCondition : '-'}}
-                    </li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carCondition ? carData?.carCondition : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">FUEL TYPE:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.fuelType ? carData?.fuelType : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">YEAR:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.selectYear ? carData?.selectYear : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">TRANSMISSON:</li>
-                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.transmission ? carData?.transmission : '-'}}
-                    </li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.transmission ? carData?.transmission : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">EXTERIOR COLOR:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carColor ? carData?.carColor : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">VRN:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.vrn ? carData?.vrn : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">SITTING CAPACITY:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.sittingCapacity}} - SEATER</li>
+                    <li class="ct_fw_300 py-2 px-2">Car Location:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.location}}</li>
                 </ul>
             </div>
             <div class="ct_white_bg mt-4">
@@ -225,10 +225,10 @@
                             <img src="assets/img/icons/seller_icon_6.svg" alt="">
                             <span>CH-123.456.789</span>
                         </li> -->
-                        <li class="ct_grid_icon_20_auto">
+                        <!-- <li class="ct_grid_icon_20_auto">
                             <img src="assets/img/icons/seller_icon_7.svg" alt="">
                             <span>Bahnhofstrasse 100, 8001 Zürich, Switzerland</span>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

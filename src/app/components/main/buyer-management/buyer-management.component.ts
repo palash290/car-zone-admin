@@ -30,7 +30,8 @@ export class BuyerManagementComponent {
   data: any;
 
   getBuseSchedule() {
-    this.service.getApi(`getSellerAndBuyer?search=${this.searchQuery}&role=buyer`).subscribe({
+    const trimmedSearch = this.searchQuery?.trim() || '';
+    this.service.getApi(`getSellerAndBuyer?search=${trimmedSearch}&role=buyer`).subscribe({
       next: (resp: any) => {
         this.data = resp.data;
       },

@@ -21,4 +21,9 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.09);
     border: 1px solid #e8e8e8;
 }
+.ct_right_dropdown.dropdown .dropdown-item:hover {
+  background-color: var(--dark_red);
+  color: #fff;
+}
  
+

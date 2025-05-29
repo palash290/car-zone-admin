@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SharedService } from '../../../services/shared.service';
 
@@ -15,6 +15,7 @@ export class HeaderComponent {
   firstName: any;
   lastName: any;
   @ViewChild('closeModal') closeModal!: ElementRef;
+  @Output() toggleEvent = new EventEmitter<boolean>();
 
   constructor(private service: SharedService) { }
 
@@ -23,6 +24,10 @@ export class HeaderComponent {
       this.loadUserProfile();
     });
     this.loadUserProfile();
+  }
+
+  toggleMenu() {
+    this.toggleEvent.emit(true);
   }
 
   loadUserProfile() {

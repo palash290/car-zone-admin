@@ -43,13 +43,14 @@
                                             <i class="fa-regular ct_show_eye" style="cursor: pointer;"
                                                 [ngClass]="isPasswordVisible ? 'fa-eye' : 'fa-eye-slash'"
                                                 (click)="togglePasswordVisibility()"></i>
-                                            <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
-                                                class="err_msg">
-                                                <div *ngIf="loginForm.controls['password'].errors?.['required']"
-                                                    class="ct_fs_14 mt-1">
-                                                    Password is
-                                                    required.</div>
-                                            </div>
+
+                                        </div>
+                                        <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+                                            class="err_msg">
+                                            <div *ngIf="loginForm.controls['password'].errors?.['required']"
+                                                class="ct_fs_14 mt-1">
+                                                Password is
+                                                required.</div>
                                         </div>
                                     </div>
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { SharedService } from '../../../services/shared.service';
 
@@ -18,8 +18,15 @@ export class SidebarComponent {
     return this.router.isActive(route, true);
   }
 
-  logout(){
+  logout() {
     this.shared.logout();
+  }
+
+  @Output() toggleEvent = new EventEmitter<boolean>();
+
+  toggleMenu() {
+    this.toggleEvent.emit(false);
+
   }
 
 

@@ -14,7 +14,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class CarListingComponent {
 
-  searchQuery: any = '';
+  searchQuery = '';
   date: any = '';
   status: any = '';
   p: any = 1;
@@ -28,7 +28,8 @@ export class CarListingComponent {
   data: any;
 
   getBuseSchedule() {
-    this.service.getApi(`listallCar?search=${this.searchQuery}&createdAt=${this.date}&isActive=${this.status}`).subscribe({
+    const trimmedSearch = this.searchQuery?.trim() || '';
+    this.service.getApi(`listallCar?search=${trimmedSearch}&createdAt=${this.date}&isActive=${this.status}`).subscribe({
       next: (resp: any) => {
         this.data = resp.data;
       },
@@ -37,5 +38,6 @@ export class CarListingComponent {
       }
     });
   }
+  
 
 }

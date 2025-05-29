@@ -75,12 +75,11 @@
                 </table>
             </div>
             <div *ngIf="data?.length == 0" class="text-center">
-                <p class="ct_fs_15 mt-5">No tiem found</p>
+                <p class="ct_fs_15 mt-5">No cars found</p>
             </div>
             <!-- Pagination Controls -->
             <pagination-controls class="ct_pagination_div" *ngIf="!(data?.length == 0)"
                 (pageChange)="p = $event"></pagination-controls>
-
         </div>
     </div>
 </div>
