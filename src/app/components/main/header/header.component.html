@@ -1,0 +1,116 @@
+<div class="ct_dashboard_head justify-content-between gap-4">
+    <div class="ct_toggle_side">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- <h4 class="ct_fs_24 ct_fw_600 mb-0">Welcome Back, Mathew!</h4> -->
+
+
+    <div class="d-flex align-items-center gap-4 ms-auto">
+        <a routerLink="/home/notifications">
+            <!-- <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M15.6469 17.4616C16.0757 19.062 15.126 20.707 13.5256 21.1358C11.9252 21.5646 10.2802 20.6149 9.85134 19.0145M2.05781 11.0601C1.66832 9.6619 2.07336 8.15027 3.10976 7.13415M12.1473 5.18763C12.4515 4.64033 12.5517 3.97883 12.3768 3.32623C12.0195 1.99256 10.6486 1.20111 9.31498 1.55846C7.98131 1.91582 7.18986 3.28666 7.54721 4.62032C7.72207 5.27292 8.13961 5.79569 8.67671 6.11756M20.32 6.16678C19.9582 4.76117 18.8516 3.65457 17.446 3.29279M17.4916 8.89206C17.1347 7.55993 16.1817 6.44596 14.8425 5.79523C13.5032 5.1445 11.8873 5.0103 10.3502 5.42216C8.81312 5.83402 7.48079 6.7582 6.64631 7.99138C5.81183 9.22457 5.54355 10.6658 5.9005 11.9979C6.49107 14.2019 6.3764 15.9603 6.00344 17.2965C5.57838 18.8193 5.36584 19.5807 5.42326 19.7336C5.48895 19.9086 5.53647 19.9566 5.7107 20.0241C5.863 20.0831 6.50277 19.9117 7.78231 19.5688L19.6474 16.3896C20.9269 16.0467 21.5667 15.8753 21.6691 15.7481C21.7862 15.6025 21.8034 15.5371 21.7728 15.3528C21.7461 15.1917 21.1813 14.6385 20.0517 13.5322C19.0607 12.5616 18.0822 11.0961 17.4916 8.89206Z"
+                    stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg> -->
+        </a>
+        <!-- <a class="ct_logout_btn" routerLink="/home/my-profile">
+            <img [src]="profileImg ? profileImg : 'https://creativethoughtsinfo.com/interfriendsApp/assets/img/np_pro.png'"
+                width="100" height="100" />
+        </a> -->
+        <div class="ct_right_dropdown dropdown">
+            <button id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="true" class="">
+                <div class="d-flex align-items-center gap-2">
+                    <img [src]="profileImg ? profileImg :'https://creativethoughtsinfo.com/interfriendsApp/assets/img/np_pro.png'" alt=""
+                        class="ct_img_30">
+                    <div class="text-start">
+                        <!-- <p class="mb-0 ct_fw_500">Alice Johnson</p> -->
+                        <small class="ct_text_939393">{{firstName}} {{lastName}}</small>
+                    </div>
+                </div>
+                <i class="fa-solid fa-angle-down ms-auto"></i>
+            </button>
+            <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1" data-popper-placement="bottom-start"
+                style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 54px, 0px);">
+                <li><a class="dropdown-item" routerLink="/home/my-profile">My Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/home/change-password">Change Password</a></li>
+                <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal"
+                        data-bs-target="#ct_logout_modal_post">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--Log out Modal -->
+<div class="modal fade" id="ct_logout_modal_post" tabindex="-1" aria-labelledby="ct_delete_postLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close ct_close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="ct_delete_post_modal">
+                    <figure>
+                        <div class="ct_delete_post_icon text-center">
+                            <svg width="48" height="49" viewBox="0 0 48 49" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_107_2124)">
+                                    <path
+                                        d="M24 0.166992C10.7452 0.166992 0 10.9122 0 24.167V24.203C0 37.4578 10.7092 48.167 23.964 48.167H24C37.2548 48.167 48 37.4578 48 24.203V24.167C48 10.9122 37.2908 0.166992 24.036 0.166992H24Z"
+                                        fill="#81101E" fill-opacity="0.1" />
+                                    <mask id="mask0_107_2124" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                        x="12" y="12" width="24" height="25">
+                                        <path d="M12 12.167H36V36.167H12V12.167Z" fill="white" />
+                                    </mask>
+                                    <g mask="url(#mask0_107_2124)">
+                                        <mask id="mask1_107_2124" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                            x="12" y="12" width="24" height="25">
+                                            <path d="M12 12.167H36V36.167H12V12.167Z" fill="white" />
+                                        </mask>
+                                        <g mask="url(#mask1_107_2124)">
+                                            <path
+                                                d="M16.0109 32.3349H31.9887C32.1404 32.3349 32.2661 32.3066 32.3659 32.2499C32.4658 32.1933 32.5546 32.0998 32.6324 31.9695C32.7102 31.8393 32.7504 31.7167 32.7529 31.6019C32.7554 31.4872 32.7207 31.363 32.6488 31.2294L24.6604 16.3935C24.591 16.2647 24.4963 16.1659 24.3763 16.0973C24.2617 16.0318 24.1362 15.999 23.9998 15.999C23.8635 15.999 23.738 16.0318 23.6233 16.0973C23.5033 16.1659 23.4086 16.2647 23.3391 16.3937L15.3508 31.2294C15.2789 31.363 15.2442 31.4872 15.2467 31.6019C15.2493 31.7167 15.2895 31.8393 15.3673 31.9695C15.4451 32.0998 15.5339 32.1933 15.6337 32.2499C15.7335 32.3066 15.8592 32.3349 16.0109 32.3349ZM16.0108 33.8349C15.5951 33.8349 15.2225 33.7414 14.8932 33.5544C14.5638 33.3674 14.2926 33.0955 14.0794 32.7386C13.8663 32.3817 13.7555 32.0139 13.7471 31.6353C13.7387 31.2567 13.833 30.8843 14.0301 30.5183L22.0186 15.6822C22.2238 15.3014 22.5105 15.0057 22.8788 14.7952C23.2241 14.5977 23.5978 14.499 23.9998 14.499C24.4019 14.499 24.7755 14.5977 25.1208 14.7952C25.4891 15.0057 25.7759 15.3015 25.9811 15.6824L33.9696 30.5183C34.1667 30.8843 34.261 31.2567 34.2525 31.6353C34.2441 32.0139 34.1333 32.3817 33.9202 32.7386C33.7071 33.0955 33.4358 33.3674 33.1064 33.5544C32.7771 33.7414 32.4045 33.8349 31.9887 33.8349H16.0108Z"
+                                                fill="#81101E" />
+                                            <path
+                                                d="M24.4799 21.2908L24.749 27.0095L23.9998 27.0448L23.2506 27.0096L23.5192 21.2932C23.5129 21.4319 23.5577 21.5508 23.6536 21.6502C23.7494 21.7495 23.8663 21.7984 24.0043 21.7971C24.1397 21.7958 24.2541 21.7462 24.3475 21.6483C24.441 21.5504 24.4852 21.4338 24.4803 21.2986L24.4799 21.2908ZM22.9813 21.3535C22.9708 21.0669 23.0645 20.82 23.2625 20.6125C23.4605 20.4051 23.7029 20.3 23.9897 20.2972C24.2821 20.2943 24.5299 20.3981 24.7329 20.6086C24.936 20.819 25.0309 21.0707 25.0176 21.3636L24.749 27.08C24.7468 27.1262 24.7404 27.1719 24.7298 27.2169C24.7192 27.262 24.7045 27.3057 24.6858 27.348C24.6671 27.3903 24.6447 27.4306 24.6185 27.4688C24.5923 27.5069 24.5629 27.5424 24.5302 27.5751C24.4974 27.6078 24.462 27.6373 24.4238 27.6634C24.3856 27.6896 24.3454 27.7121 24.3031 27.7308C24.2607 27.7495 24.217 27.7641 24.172 27.7748C24.1269 27.7854 24.0813 27.7918 24.0351 27.794C23.9859 27.7963 23.9369 27.7938 23.8882 27.7864C23.8395 27.7791 23.792 27.7671 23.7457 27.7504C23.6994 27.7337 23.6551 27.7127 23.6129 27.6873C23.5707 27.6619 23.5314 27.6326 23.495 27.5995C23.4586 27.5663 23.4257 27.5299 23.3965 27.4903C23.3672 27.4507 23.3421 27.4086 23.3212 27.3641C23.3002 27.3195 23.2838 27.2733 23.2719 27.2255C23.2601 27.1777 23.253 27.1292 23.2507 27.08L22.9816 21.3613L22.9813 21.3535Z"
+                                                fill="#81101E" />
+                                            <path
+                                                d="M24 30.7881C23.7411 30.7881 23.5201 30.6966 23.3371 30.5135C23.154 30.3304 23.0625 30.1095 23.0625 29.8506C23.0625 29.5917 23.154 29.3707 23.3371 29.1877C23.5201 29.0046 23.7411 28.9131 24 28.9131C24.2589 28.9131 24.4798 29.0046 24.6629 29.1877C24.846 29.3707 24.9375 29.5917 24.9375 29.8506C24.9375 30.1095 24.846 30.3304 24.6629 30.5135C24.4798 30.6966 24.2589 30.7881 24 30.7881Z"
+                                                fill="#81101E" />
+                                        </g>
+                                    </g>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_107_2124">
+                                        <rect width="48" height="48" fill="white" transform="translate(0 0.166992)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <figcaption class="mt-4 text-center">
+                            <h4 class="ct_fs_18 ct_fw_600">Log Out</h4>
+                            <p class="mb-0">Are you sure you want to logout? once you logout you need to
+                                login
+                                again.</p>
+                        </figcaption>
+                    </figure>
+                    <div class="d-flex justify-content-center border-0 gap-3 ct_modal_footer">
+                        <button type="button" class="ct_outline_btn ct_h_40 w-100 ct_fw_600"
+                            data-bs-dismiss="modal">Cancel</button>
+
+                        <a (click)="logout()"
+                            class="ct_border_radius_10 ct_h_40  ct_red_btn w-100 ct_fw_600 text-center">Log
+                            Out</a>
+                        <button hidden type="button" class="btn btn-secondary" #closeModal
+                            data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

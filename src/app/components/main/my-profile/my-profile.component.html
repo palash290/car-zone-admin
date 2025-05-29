@@ -1,0 +1,103 @@
+<div class="ct_dashbaord_middle">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <!-- <a href="my-profile.html" class="ct_back_icon"><i class="fa-solid fa-chevron-left"></i></a> -->
+                <h4 class="ct_fs_22 ct_fw_600 mb-0 ct_text_black">Edit Profile</h4>
+            </div>
+            <form [formGroup]="profileForm" class="ct_mt_30">
+                <div class="ct_outline_border">
+                    <div class="d-flex align-items-center justify-content-between gap-3">
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="ct_upload_user_profile_img">
+                                <!-- <img src="assets/img/np_pro.png" alt="" data-bs-toggle="modal"
+                                    data-bs-target="#full_view_img"> -->
+                                <img [src]="profileImg ? profileImg : 'https://creativethoughtsinfo.com/interfriendsApp/assets/img/np_pro.png'"
+                                    width="100" height="100" />
+                                <label for="ct_upload_user_profile2" class="position-relative d-block">
+                                    <!-- <input type="file" class="d-none" id="ct_upload_user_profile2"> -->
+                                    <input accept="image/*" type="file" id="ct_upload_user_profile2" class="d-none"
+                                        (change)="onFileSelected($event)" />
+                                    <div class="ct_authore_banner_upload_icon_12">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <h4 class="ct_fs_18 ct_fw_700 mb-1">{{first_name}} {{last_name}}</h4>
+                                <p class="mb-0 ct_grey_text ct_fs_14">Admin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ct_outline_border mt-4 ct_py_38">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-4">
+                                <label for="" class="mb-2 ct_fw_500 ct_fs_16">First Name <span
+                                        class="ct_red_text">*</span></label>
+                                <input type="text" class="form-control ct_custom_input bg-transparent "
+                                    placeholder="Enter First Name" value="Mathew" formControlName="first_name" [maxlength]="15">
+
+                                <div *ngIf="profileForm.controls['first_name'].invalid && profileForm.controls['first_name'].touched"
+                                    class="err_msg">
+                                    <div *ngIf="profileForm.controls['first_name'].errors?.['required']">Please enter
+                                        your first name.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-4">
+                                <label for="" class="mb-2 ct_fw_500 ct_fs_16">Last Name <span
+                                        class="ct_red_text">*</span></label>
+                                <input type="text" class="form-control ct_custom_input bg-transparent "
+                                    placeholder="Enter Last Name" value="Daniel" formControlName="last_name" [maxlength]="15">
+
+                                <div *ngIf="profileForm.controls['last_name'].invalid && profileForm.controls['last_name'].touched"
+                                    class="err_msg">
+                                    <div *ngIf="profileForm.controls['last_name'].errors?.['required']">Please enter
+                                        your last name.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-4">
+                                <label for="" class="mb-2 ct_fw_500 ct_fs_16">Phone No. <span
+                                        class="ct_red_text">*</span></label>
+                                <input type="text" class="form-control ct_custom_input bg-transparent "
+                                    placeholder="Enter Phone No." value="+09 1234567890" formControlName="phone" [maxlength]="15">
+
+                                <div *ngIf="profileForm.controls['phone'].invalid && profileForm.controls['phone'].touched"
+                                    class="err_msg">
+                                    <div *ngIf="profileForm.controls['phone'].errors?.['required']">Please enter
+                                        your phone no..</div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-4">
+                                <label for="" class="mb-2 ct_fw_500 ct_fs_16">Email <span
+                                        class="ct_red_text">*</span></label>
+                                <input type="email" class="form-control ct_custom_input " placeholder="Enter Email"
+                                    value="mathewdaniel123@gmail.com" formControlName="email">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-4" (click)="onSubmit()">
+                        <button class="ct_red_btn px-5">Save Changes</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="loading" class="ct_loader_main">
+        <div class="loader"></div>
+    </div>

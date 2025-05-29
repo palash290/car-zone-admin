@@ -1,0 +1,90 @@
+<div class="ct_dashbaord_middle">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <a routerLink="/home/seller-management" class="ct_back_icon"><i class="fa-solid fa-chevron-left"></i></a>
+                <h4 class="ct_fs_22 ct_fw_600 mb-0 ct_text_black">Seller Details</h4>
+            </div>
+            <form action="" class="ct_mt_30">
+                <div class="ct_outline_border ct_light_grey_bg ct_py_38">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-4 col-xl-5 mb-4 mb-xl-0">
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="ct_upload_user_profile_img">
+                                    <img [src]="carData?.profileImage ? carData?.profileImage : 'assets/img/np_pro.png'" alt="" data-bs-toggle="modal"
+                                        data-bs-target="#full_view_img">
+                                </div>
+                                <div>
+                                    <h4 class="ct_fs_18 ct_fw_700 mb-1">{{carData?.sellerName}}</h4>
+                                    @if(carData?.isBlocked == 0){
+                                    <p class="mb-0  ct_fs_14 ct_green_text"> <span class="ct_circle_dot_8 me-1"
+                                            style="background-color: #008000;"></span>Active Buyer</p>
+                                    } @else {
+                                    <p class="mb-0  ct_fs_14 ct_green_text"> <span class="ct_circle_dot_8 me-1"
+                                            style="background-color: #008000;"></span>Inactive Buyer</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-8 col-xl-7 mb-4 mb-md-0">
+                            <div class="row">
+                                <div class="col-sm-5 mb-4">
+                                    <p class="mb-1 ct_fw_600">Phone Number</p>
+                                    <p class="ct_grey_text mb-0">{{carData?.phoneNumber ? carData?.phoneNumber : '-'}}</p>
+                                </div>
+                                <div class="col-sm-5 mb-4">
+                                    <p class="mb-1 ct_fw_600">Email Address</p>
+                                    <p class="ct_grey_text mb-0">{{carData?.email ? carData?.email : '-'}}</p>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5 mb-4 mb-md-0">
+                                    <p class="mb-1 ct_fw_600">Total Listings</p>
+                                    <p class="ct_grey_text mb-0">{{carData?.totalCarsListed ? carData?.totalCarsListed : '-'}}
+                                    </p>
+                                </div>
+                                <div class="col-sm-5 mb-4 mb-md-0">
+                                    <p class="mb-1 ct_fw_600">Seller Type</p>
+                                    <p class="ct_grey_text mb-0">{{carData?.seller_type ? carData?.seller_type : '-'}}</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="ct_outline_border mt-4 ct_py_38 ct_light_grey_bg">
+                    <div class="d-flex align-items-center justify-content-between gap-3 ct_flex_column_767 ">
+                        <h4 class="ct_fs_22 ct_fw_600 mb-0 ct_text_black">Business Information</h4>
+
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-5 mb-4">
+                            <p class="mb-1 ct_fw_600">Legal Form</p>
+                            <p class="ct_grey_text mb-0">{{carData?.legalForm ? carData?.legalForm : '-'}}</p>
+                        </div>
+                        <div class="col-sm-5 mb-4">
+                            <p class="mb-1 ct_fw_600">Company Name</p>
+                            <p class="ct_grey_text mb-0">{{carData?.companyName ? carData?.companyName : '-'}}</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 mb-4 mb-md-0">
+                            <p class="mb-1 ct_fw_600">Company Address</p>
+                            <p class="ct_grey_text mb-0">{{carData?.companyAddress ? carData?.companyAddress : '-'}}
+                            </p>
+                        </div>
+                        <div class="col-sm-5 mb-4 mb-md-0">
+                            <p class="mb-1 ct_fw_600">VAT Number:</p>
+                            <p class="ct_grey_text mb-0">{{carData?.vat ? carData?.vat : '-'}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,182 @@
+<div class="ct_dashbaord_middle">
+
+    <div class="row ct_mt_20">
+        <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4 mb-xxl-0">
+            <div class="ct_dash_card">
+
+                <div class="ct_dash_card_info">
+                    <span>Total Registered<br>Buyers </span>
+                    <h4 class="mb-0 ct_fs_24 ct_fw_600">{{totalBuyers ? totalBuyers : '-'}}</h4>
+
+                </div>
+                <div class="ct_small_icon">
+                    <img src="assets/img/total_buyer_icon.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4 mb-xxl-0">
+            <div class="ct_dash_card">
+
+                <div class="ct_dash_card_info">
+                    <span>Total Registered<br>Sellers </span>
+                    <h4 class="mb-0 ct_fs_24 ct_fw_600">{{totalSellers ? totalSellers : '-'}}</h4>
+
+                </div>
+                <div class="ct_small_icon">
+                    <img src="assets/img/total-seller.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4 mb-xxl-0">
+            <div class="ct_dash_card">
+
+                <div class="ct_dash_card_info">
+                    <span>Active<br>Listings </span>
+                    <h4 class="mb-0 ct_fs_24 ct_fw_600">{{totalActiveCars ? totalActiveCars : '-'}}</h4>
+
+                </div>
+                <div class="ct_small_icon">
+                    <img src="assets/img/total-listing.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-4 mb-xxl-0">
+            <div class="ct_dash_card">
+
+                <div class="ct_dash_card_info">
+                    <span>Total Slot<br>Requests</span>
+                    <h4 class="mb-0 ct_fs_24 ct_fw_600">32</h4>
+
+                </div>
+                <div class="ct_small_icon">
+                    <img src="assets/img/total-request.gif" alt="">
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <div class="ct_mt_30">
+        <div class="d-flex align-items-center gap-3 justify-content-between">
+            <h4 class=" ct_fs_24 ct_fw_600 mb-0">Recently Listed Cars</h4>
+            <a routerLink="/home/car-listing"
+                class="ct_fs_20 ct_fw_600 ct_text_clr_8D0D21 ct_text_decoration_underline">View
+                all</a>
+        </div>
+
+        <div class="row ct_mt_30">
+            <div class="col-xxl-4 col-xl-6 col-lg-12  mb-4 mb-xxl-0" *ngFor="let item of cars; let i = index">
+                <figure class="ct_card_listed_card">
+                    <p class="mb-0 ct_fw_600">{{item.carModel}}</p>
+                    <img [src]="item.carImages ? item.carImages : 'assets/img/no_car.png'" alt="">
+                    <figcaption class="mt-3">
+                        <h4 class="ct_fs_24 ct_fw_600">{{item.brandName}}</h4>
+                        <div class="d-flex align-items-center justify-content-between gap-2 ct_flex_column_767">
+                            <ul class="d-flex align-items-center gap-2">
+                                <li>
+                                    <p class="mb-0">{{item.selectYear}}</p>
+                                </li>
+                                <li class="ct_line_h_0">
+                                    <p class="mb-0"><i class="fa-solid fa-circle ct_fs_8"></i></p>
+                                </li>
+                                <li>
+                                    <p class="mb-0">15,000 km</p>
+                                </li>
+                            </ul>
+                            <p class="mb-0">Munich, Germany</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+            </div>
+            <!-- <div class="col-xxl-4 col-xl-6 col-lg-12  mb-4 mb-xxl-0">
+                <figure class="ct_card_listed_card">
+                    <p class="mb-0 ct_fw_600">CHF 45,900</p>
+                    <img src="assets/img/small_car_2.png" alt="">
+                    <figcaption class="mt-3">
+                        <h4 class="ct_fs_24 ct_fw_600">BMW X5 2022</h4>
+                        <div class="d-flex align-items-center justify-content-between gap-2 ct_flex_column_767">
+                            <ul class="d-flex align-items-center gap-2">
+                                <li>
+                                    <p class="mb-0">2023</p>
+                                </li>
+                                <li class="ct_line_h_0">
+                                    <p class="mb-0"><i class="fa-solid fa-circle ct_fs_8"></i></p>
+                                </li>
+                                <li>
+                                    <p class="mb-0">15,000 km</p>
+                                </li>
+                            </ul>
+                            <p class="mb-0">Munich, Germany</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+            </div>
+            <div class="col-xxl-4 col-xl-6 col-lg-12  mb-4 mb-xxl-0">
+                <figure class="ct_card_listed_card">
+                    <p class="mb-0 ct_fw_600">CHF 45,900</p>
+                    <img src="assets/img/small_car_3.png" alt="">
+                    <figcaption class="mt-3">
+                        <h4 class="ct_fs_24 ct_fw_600 ct_overlay_text">Mercedes-Benz C-Class </h4>
+                        <div class="d-flex align-items-center justify-content-between gap-2 ct_flex_column_767">
+                            <ul class="d-flex align-items-center gap-2">
+                                <li>
+                                    <p class="mb-0">2023</p>
+                                </li>
+                                <li class="ct_line_h_0">
+                                    <p class="mb-0"><i class="fa-solid fa-circle ct_fs_8"></i></p>
+                                </li>
+                                <li>
+                                    <p class="mb-0">15,000 km</p>
+                                </li>
+                            </ul>
+                            <p class="mb-0">Munich, Germany</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+            </div> -->
+
+        </div>
+    </div>
+
+
+    <div class="row ct_mt_30">
+        <div class="col-lg-12 mb-4 mb-lg-0">
+            <div class="d-flex align-items-center gap-3 justify-content-between">
+                <h4 class=" ct_fs_24 ct_fw_600 mb-0">Registered Sellers</h4>
+                <a routerLink="/home/seller-management"
+                    class="ct_fs_20 ct_fw_600 ct_text_clr_8D0D21 ct_text_decoration_underline">View
+                    all</a>
+            </div>
+            <div class="table-responsive ct_mt_30 ct_custom_table_main">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Profile Img</th>
+                            <th>Seller Name</th>
+                            <th>Phone No.</th>
+                            <th class="text-end">Total Listings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of sellers; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>
+                                <img [src]="item.profile ? item.profile : 'assets/img/np_pro.png'" alt="" class="ct_img_w_44" data-bs-toggle="modal"
+                                    data-bs-target="#full_view_img">
+                            </td>
+                            <td>{{item.sellerName}}</td>
+                            <td>{{item.phoneNo}}</td>
+
+                            <td class="text-end">
+                                {{item.totalListings}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,193 @@
+@media screen and (max-width: 1199px) {
+  .ct_flex_col_1199 {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .ct_dashbaord_main .ct_sidebar_menu {
+    left: -100%;
+  }
+
+  .ct_dashbaord_main .ct_content_right {
+    left: -100%;
+  }
+
+  .ct_dashbaord_main .ct_content_right {
+    width: 100%;
+  }
+
+  .ct_dashbaord_main.ct_active .ct_sidebar_menu {
+    left: 0%;
+  }
+  .ct_dashbaord_main.ct_active .ct_toggle_side {
+    left: 0px;
+    top: 30px;
+    background-color: #fff;
+  }
+  .ct_dashbaord_main.ct_active .ct_toggle_side span {
+    background-color: #060606;
+  }
+  .ct_toggle_side {
+    display: flex;
+  }
+  .ct_dashbaord_main.ct_active .ct_dashbaord_middle {
+    margin-left: 0%;
+  }
+  .ct_computer_img img {
+    width: 300px;
+  }
+  .ct_new_project_cnt {
+    text-align: center;
+  }
+  .ct_close_side_bar {
+    display: flex;
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes bounce-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+    80% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-1000px);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ct_project_summary_head {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .ct_content_right {
+    width: 100%;
+  }
+  .ct_w_50_res {
+    width: 50% !important;
+  }
+  .ct_get_started_cnt {
+    text-align: center;
+  }
+  .ct_get_started_cnt a {
+    margin: auto;
+  }
+  .ct_get_started_cnt p {
+    text-align: center;
+  }
+  .ct_dashbaord_middle {
+    padding-inline: 15px;
+  }
+  .ct_user_name_info {
+    display: none;
+  }
+  button.ct_logout_btn.ct_white_btn {
+    background-color: transparent;
+    width: auto;
+  }
+  .ct_responsive_wrap {
+    flex-direction: column;
+  }
+  .ct_responsive_wrap,
+  .ct_responsive_wrap .ct_days_select,
+  .ct_responsive_wrap .ct_days_select select {
+    width: 100%;
+  }
+  .Committed_Price .modal-body,
+  .Committed_Price .modal-footer {
+    padding-inline: 20px;
+  }
+  .ct_side_logo img {
+    width: 120px !important;
+  }
+  .ct_mob_responsive_wrap {
+    flex-direction: column;
+  }
+  .ct_mob_d_none {
+    display: none;
+  }
+
+  .ct_fs_64,
+  .ct_fs_78 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .ct_gradient_box {
+    max-width: 80%;
+  }
+  .ct_ride_detail_left {
+    grid-template-columns: auto;
+  }
+  .ct_flex_column_767 {
+    flex-direction: column;
+    align-items: start !important;
+  }
+  .ct_w_100_767 {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .ct_fs_64,
+  .ct_fs_78 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .ct_gradient_box {
+    max-width: 100%;
+  }
+  .ct_gradient_box {
+    height: 250px;
+  }
+  .ct_card_item_animated {
+    margin-top: -280px;
+    position: relative;
+    text-align: center;
+  }
+  .ct_why_choose_right ul li {
+    grid-template-columns: auto;
+  }
+
+  .ct_animated_card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+  .ct_dashboard_head h4 {
+    display: none;
+  }
+  .ct_flex_column_575 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ct_w_575_100 {
+    width: 100%;
+  }
+}
