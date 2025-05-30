@@ -134,7 +134,7 @@
                 <h4 class="ct_fs_24 ct_fw_600 mb-3">Features & Specifications</h4>
                 <ul class="ct_car_feature_list ct_custom_scroll">
                     @if(carFeaturesList?.length == 0){
-                    No data found
+                    -
                     }
                     <li *ngFor="let feature of carFeaturesList">
                         <i class="fa-solid fa-check ct_text_dark_red"></i>
@@ -145,7 +145,7 @@
             <div class="mt-5">
                 <h4 class="ct_fs_24 ct_fw_600 mb-3">Description</h4>
                 <p class="ct_para_scroll ct_custom_scroll mb-0">
-                    {{carData?.description}}
+                    {{carData?.description ? carData?.description : '-'}}
                 </p>
             </div>
         </div>
@@ -156,22 +156,35 @@
             <div>
                 <h5 class="ct_fs_20 ct_fw_600 mb-3">Vehicle Details</h5>
                 <ul class="ct_grid_2 ct_custom_scroll">
+                    @if(carData?.carMileage){
                     <li class="ct_fw_300 py-2 px-2">MILEAGE:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carMileage ? carData?.carMileage : '-'}} km</li>
+                    } @else {
+                    <li class="ct_fw_300 py-2 px-2">MILEAGE:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{'-'}}</li>
+                    }
                     <li class="ct_fw_300 py-2 px-2">CONDITION:</li>
-                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carCondition ? carData?.carCondition : '-'}}</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carCondition ? carData?.carCondition : '-'}}
+                    </li>
                     <li class="ct_fw_300 py-2 px-2">FUEL TYPE:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.fuelType ? carData?.fuelType : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">YEAR:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.selectYear ? carData?.selectYear : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">TRANSMISSON:</li>
-                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.transmission ? carData?.transmission : '-'}}</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.transmission ? carData?.transmission : '-'}}
+                    </li>
                     <li class="ct_fw_300 py-2 px-2">EXTERIOR COLOR:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.carColor ? carData?.carColor : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">VRN:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.vrn ? carData?.vrn : '-'}}</li>
+                    @if(carData?.sittingCapacity){
                     <li class="ct_fw_300 py-2 px-2">SITTING CAPACITY:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.sittingCapacity}} - SEATER</li>
+                    } @else {
+                    <li class="ct_fw_300 py-2 px-2">SITTING CAPACITY:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{'-'}}</li>
+                    }
+
                     <li class="ct_fw_300 py-2 px-2">Car Location:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.location}}</li>
                 </ul>
@@ -233,8 +246,5 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
 </div>

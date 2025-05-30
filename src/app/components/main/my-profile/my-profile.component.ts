@@ -34,7 +34,7 @@ export class MyProfileComponent {
     this.profileForm = new FormGroup({
       first_name: new FormControl('', Validators.required),
       last_name: new FormControl('', Validators.required),
-      phone: new FormControl('', [Validators.required, Validators.pattern(this.pattern1)]),
+      phone: new FormControl('', Validators.required),
       email: new FormControl({ value: this.userEmail, disabled: true })
     });
   }
@@ -91,9 +91,11 @@ export class MyProfileComponent {
             this.toastr.success(resp.message);
             this.loading = false;
             this.service.triggerRefresh();
+            this.loadUserProfile();
           } else {
             this.toastr.warning(resp.message);
             this.loading = false;
+            this.loadUserProfile();
           }
         },
         error: (error) => {

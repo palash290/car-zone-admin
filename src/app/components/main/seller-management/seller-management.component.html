@@ -15,10 +15,11 @@
                     <thead>
                         <tr>
                             <th>S.No</th>
-                            <th>Profile Img</th>
+                            <th>Profile Image</th>
                             <th>Seller Name</th>
+                            <th>Seller Type</th>
                             <th>Phone No.</th>
-                            <th>Total Listings</th>
+                            <th>Email Id</th>
                             <th>Status</th>
                             <th class="text-end">Action</th>
                         </tr>
@@ -31,6 +32,8 @@
                                     class="ct_img_w_44" data-bs-toggle="modal" data-bs-target="#full_view_img">
                             </td>
                             <td>{{item?.fullName}}</td>
+                            <td *ngIf="item?.seller_type == 'personal'">Private</td>
+                            <td *ngIf="item?.seller_type == 'business'">Official</td>
                             <td>{{item?.phoneNumber}}</td>
                             <td>{{item?.email}}</td>
                             <td>

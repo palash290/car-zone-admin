@@ -34,7 +34,7 @@
                             <th>S.No</th>
                             <th>Car Name</th>
                             <th>Brand Name</th>
-                            <th>Price ($)</th>
+                            <th>Price (CHF)</th>
                             <!-- <th>Listing Type</th> -->
                             <th>Listed On</th>
                             <th>Car Image</th>
@@ -45,9 +45,9 @@
                     <tbody>
                         <tr *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                             <td>{{(p - 1) * 10 + i + 1}}</td>
-                            <td>{{item.carModel}}</td>
-                            <td>{{item.brandName}}</td>
-                            <td>{{item.totalPrice}}</td>
+                            <td>{{item.carModel ? item.carModel : '-'}}</td>
+                            <td>{{item.brandName ? item.brandName : '-'}}</td>
+                            <td>{{item.totalPrice ? item.totalPrice : '-'}}</td>
                             <!-- <td>Standard</td> -->
                             <td>{{item.createdAt | date:'dd-MM-yyyy'}}</td>
                             <td>

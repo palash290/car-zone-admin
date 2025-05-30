@@ -79,14 +79,13 @@
                                     <p class="mb-0"><i class="fa-solid fa-circle ct_fs_8"></i></p>
                                 </li>
                                 <li>
-                                    <p class="mb-0">15,000 km</p>
+                                    <p class="mb-0">{{item?.carMileage ? item?.carMileage : '0'}} km</p>
                                 </li>
                             </ul>
-                            <p class="mb-0">Munich, Germany</p>
+                            <p class="mb-0">{{item?.location ? item?.location : '-'}}</p>
                         </div>
                     </figcaption>
                 </figure>
-
             </div>
             <!-- <div class="col-xxl-4 col-xl-6 col-lg-12  mb-4 mb-xxl-0">
                 <figure class="ct_card_listed_card">
@@ -157,6 +156,7 @@
                             <th>Profile Img</th>
                             <th>Seller Name</th>
                             <th>Phone No.</th>
+                            <!-- <th>Registered On</th> -->
                             <th class="text-end">Total Listings</th>
                         </tr>
                     </thead>
@@ -164,12 +164,12 @@
                         <tr *ngFor="let item of sellers; let i = index">
                             <td>{{i+1}}</td>
                             <td>
-                                <img [src]="item.profile ? item.profile : 'assets/img/np_pro.png'" alt="" class="ct_img_w_44" data-bs-toggle="modal"
-                                    data-bs-target="#full_view_img">
+                                <img [src]="item.profile ? item.profile : 'assets/img/np_pro.png'" alt=""
+                                    class="ct_img_w_44" data-bs-toggle="modal" data-bs-target="#full_view_img">
                             </td>
                             <td>{{item.sellerName}}</td>
                             <td>{{item.phoneNo}}</td>
-
+                            <!-- <td>{{item.createdAt}}</td> -->
                             <td class="text-end">
                                 {{item.totalListings}}
                             </td>
