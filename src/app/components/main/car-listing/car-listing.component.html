@@ -7,7 +7,7 @@
                     <div class="form-group position-relative ct_w_100_767" style="width: 300px;">
                         <input type="text"
                             class="form-control ct_input ct_inpu_h_44 ct_input_grey  ct_input_ps_40 ct_w_100_767"
-                            placeholder="Search by Name, Email or Phone" [(ngModel)]="searchQuery"
+                            placeholder="Search " [(ngModel)]="searchQuery"
                             (ngModelChange)="getBuseSchedule()">
                         <i class="fa-solid fa-search ct_icon_left "></i>
                     </div>
@@ -35,7 +35,6 @@
                             <th>Car Name</th>
                             <th>Brand Name</th>
                             <th>Price (CHF)</th>
-                            <!-- <th>Listing Type</th> -->
                             <th>Listed On</th>
                             <th>Car Image</th>
                             <th>Status</th>
@@ -48,7 +47,6 @@
                             <td>{{item.carModel ? item.carModel : '-'}}</td>
                             <td>{{item.brandName ? item.brandName : '-'}}</td>
                             <td>{{item.totalPrice ? item.totalPrice : '-'}}</td>
-                            <!-- <td>Standard</td> -->
                             <td>{{item.createdAt | date:'dd-MM-yyyy'}}</td>
                             <td>
                                 @if(item.carImages?.length){
@@ -58,14 +56,11 @@
                                 <img [src]="'assets/img/no_car.png'" alt="Car Image" class="ct_img_w_130"
                                     data-bs-toggle="modal" data-bs-target="#full_view_img" />
                                 }
-
                             </td>
-
                             <td>
                                 <span *ngIf="item.isActive == 1" class="ct_green_text">Active</span>
                                 <span *ngIf="item.isActive == 0" class="ct_red_text">Expired</span>
                             </td>
-
                             <td class="text-end">
                                 <a [routerLink]="['/home/car-listing-details']" [queryParams]="{ id: item.id }"
                                     class="ct_grey_text"><i class="fa-regular fa-eye"></i></a>

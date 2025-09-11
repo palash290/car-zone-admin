@@ -60,6 +60,12 @@
   }
 }
 
+
+
+
+
+
+
 .pagination-section {
   padding: 1rem;
   border-top: 1px solid #dcdcdc;
@@ -78,13 +84,29 @@ pagination-controls.ct_pagination_div {
 .ct_pagination_div .ngx-pagination .current {
   background-color: #81101e;
 }
-.mySwiperMain .swiper-button-prev, .mySwiperMain .swiper-button-next {
-    width: 30px;
-    height: 30px;
-    background: var(--dark_red);
+
+.mySwiperMain .swiper-button-prev,
+.mySwiperMain .swiper-button-next {
+  width: 30px;
+  height: 30px;
+  background: var(--dark_red);
 }
-.mySwiperMain .swiper-button-prev:after,.mySwiperMain .swiper-button-next:after {
-    font-size: 16px !important;
-    color: #fff;
-    font-weight: 600;
+
+.mySwiperMain .swiper-button-prev:after,
+.mySwiperMain .swiper-button-next:after {
+  font-size: 16px !important;
+  color: #fff;
+  font-weight: 600;
+}
+
+.ct_white_nowrap {
+  white-space: nowrap;
+}
+
+* {
+  cursor: auto;
+}
+
+.cdk-overlay-container {
+  z-index: 9999999999999 !important;
 }

@@ -67,9 +67,9 @@ export class MyProfileComponent {
 
     const first_name = this.profileForm.value.first_name?.trim();
     const last_name = this.profileForm.value.last_name?.trim();
-    const phone = this.profileForm.value.phone?.trim();
+    //const phone = this.profileForm.value.phone?.trim();
 
-    if (!first_name || !last_name || !phone) {
+    if (!first_name || !last_name) {
       return;
     }
 
@@ -79,7 +79,7 @@ export class MyProfileComponent {
       formURlData.append('firstName', this.profileForm.value.first_name);
       formURlData.append('lastName', this.profileForm.value.last_name);
       formURlData.append('email', this.userEmail);
-      formURlData.append('contact_no', this.profileForm.value.phone);
+      //formURlData.append('contact_no', this.profileForm.value.phone);
 
       if (this.selectedFile) {
         formURlData.append('profileImage', this.selectedFile);

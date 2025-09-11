@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { SharedService } from '../../../services/shared.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-price-management',
@@ -9,5 +11,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './price-management.component.css'
 })
 export class PriceManagementComponent {
+
+
 
 }

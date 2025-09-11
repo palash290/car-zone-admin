@@ -112,8 +112,22 @@
                 Pricing Management
             </a>
         </li> -->
-        <!-- <li>
-            <a href="slot-requests.html">
+
+        <li routerLink="/home/slot-request" [ngClass]="{ 'active': isActive('/home/slot-request')}">
+            <a routerLink="/home/slot-request">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1.5V3C16.9725 3 21 7.0275 21 12C21 16.9725 16.9725 21 12 21V22.5C17.7975 22.5 22.5 17.7975 22.5 12C22.5 6.2025 17.7975 1.5 12 1.5ZM6.18004 18.855L5.21254 20.0025C6.13504 20.7825 7.19254 21.405 8.34754 21.8325L8.85754 20.4225C7.86754 20.055 6.96004 19.5225 6.17254 18.855H6.18004ZM3.14254 13.5L1.66504 13.8075C1.87504 15.03 2.29504 16.1775 2.89504 17.2125L4.19254 16.5C3.68254 15.615 3.32254 14.5425 3.14254 13.5ZM4.19254 7.5L2.89504 6.75C2.30254 7.785 1.88254 8.97 1.66504 10.1925L3.14254 10.455C3.32254 9.4125 3.68254 8.3925 4.19254 7.5075V7.5ZM8.86504 3.57L8.35504 2.16C7.20004 2.5875 6.14254 3.21 5.22004 3.99L6.18754 5.1375C6.97504 4.47 7.88254 3.9375 8.87254 3.57H8.86504Z"
+                        fill="white" />
+                    <path
+                        d="M15.75 9V7.5H12.75V5.25H11.25V7.5H9.75C8.92275 7.5 8.25 8.17275 8.25 9V11.25C8.25 12.0773 8.92275 12.75 9.75 12.75H14.25V15H8.25V16.5H11.25V18.75H12.75V16.5H14.25C15.0773 16.5 15.75 15.8273 15.75 15V12.75C15.75 11.9227 15.0773 11.25 14.25 11.25H9.75V9H15.75Z"
+                        fill="white" />
+                </svg>
+                Slot Management
+            </a>
+        </li>
+        <!-- <li routerLink="/home/slot-request" [ngClass]="{ 'active': isActive('/home/slot-request')}">
+            <a routerLink="/home/slot-request">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_356_189)">
                         <path
@@ -126,9 +140,10 @@
                         </clipPath>
                     </defs>
                 </svg>
-                Slot Requests
+                Slot Management
             </a>
         </li> -->
+
     </ul>
     <!-- <div class="ct_sidebar_logout_btn" data-bs-toggle="modal" data-bs-target="#ct_logout_modal_post">
         <a href="javascript:void(0)">Log Out

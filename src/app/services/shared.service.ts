@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 
@@ -8,7 +8,9 @@ import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 })
 export class SharedService {
 
-  baseUrl = 'http://13.51.226.81:4000/api/admin/';
+  purches = signal<any>(null)
+
+  baseUrl = 'https://13.51.226.81:4000/api/admin/';
   //baseUrl = 'http://192.168.29.142:4009/api/admin/';
 
   constructor(private http: HttpClient, private route: Router) { }
@@ -61,6 +63,15 @@ export class SharedService {
       Authorization: `Bearer ${authToken}`
     })
     return this.http.post(this.baseUrl + url, data, { headers: headers })
+  }
+
+  putAPI(url: any, data: any): Observable<any> {
+    const authToken = localStorage.getItem('carAdminToken')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Bearer ${authToken}`
+    })
+    return this.http.put(this.baseUrl + url, data, { headers: headers })
   }
 
   postAPIUser<T, U>(url: string, data: U): Observable<T> {

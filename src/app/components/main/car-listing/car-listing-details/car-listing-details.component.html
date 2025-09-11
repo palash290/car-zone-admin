@@ -10,6 +10,7 @@
     <div class="row">
         <div class="col-xl-8 mb-4 mb-xl-0">
             <h4 class="ct_fs_28 ct_fw_600 mb-3 ">{{carData?.brandName}}</h4>
+            
             <!-- <ul class="d-flex align-items-center gap-3 flex-wrap">
                 <li>
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,17 +111,20 @@
             </ul> -->
 
             <!-- Main Swiper -->
-            <div class="swiper mySwiperMain">
+            <div class="swiper mySwiperMain ct_product_slider_12">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" *ngFor="let img of images">
                         <img [src]="img" />
                     </div>
                 </div>
+                @if(images.length > 1) {
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
+                }
             </div>
 
             <!-- Thumbnail Swiper -->
+            @if(images.length > 1) {
             <div class="swiper mySwiperThumbs ct_card_small_thumb  mt-3">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" *ngFor="let img of images">
@@ -128,12 +132,12 @@
                     </div>
                 </div>
             </div>
-
+            }
 
             <div class="mt-5">
                 <h4 class="ct_fs_24 ct_fw_600 mb-3">Features & Specifications</h4>
                 <ul class="ct_car_feature_list ct_custom_scroll">
-                    @if(carFeaturesList?.length == 0){
+                    @if(carFeaturesList.length == 0){
                     -
                     }
                     <li *ngFor="let feature of carFeaturesList">
@@ -168,6 +172,12 @@
                     </li>
                     <li class="ct_fw_300 py-2 px-2">FUEL TYPE:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.fuelType ? carData?.fuelType : '-'}}</li>
+
+                    <li class="ct_fw_300 py-2 px-2">Engine Type:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.engineType ? carData?.engineType : '-'}}</li>
+                    <li class="ct_fw_300 py-2 px-2">CO2 Emission:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.co2Emission ? carData?.co2Emission : '-'}}</li>
+
                     <li class="ct_fw_300 py-2 px-2">YEAR:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.selectYear ? carData?.selectYear : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">TRANSMISSON:</li>
@@ -247,4 +257,14 @@
             </div>
         </div>
     </div>
+
+    <div class="mt-5 ">
+        <h4 class="ct_fs_24 ct_fw_600 mb-3">Reel Video</h4>
+        <div class="video_section">
+
+            <app-video-player [videoUrl]="carData?.carReel" />
+        </div>
+    </div>
 </div>
+<!-- "engineType": "hhhh",
+        "co2Emission": "hh", -->

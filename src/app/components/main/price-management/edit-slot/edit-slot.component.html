@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="d-flex align-items-center gap-3 mb-3">
-                <a href="pricing-management.html" class="ct_back_icon"><i class="fa-solid fa-chevron-left"></i></a>
-                <h4 class="ct_fs_22 ct_fw_600 mb-0 ct_text_black">Edit Slot Plan</h4>
+                <a routerLink="/home/price-management" class="ct_back_icon"><i class="fa-solid fa-chevron-left"></i></a>
+                <h4 class="ct_fs_22 ct_fw_600 mb-0 ct_text_black">{{carId ? 'Edit Slot Plan' : 'Add Slot Plan'}}</h4>
             </div>
             <div class="ct_outline_border mt-4 ct_py_38 ct_light_grey_bg">
                 <div class="ct_light_yellow_bg ct_p_20 ct_border_radius_10">
@@ -27,7 +27,6 @@
                                     </g>
                                 </g>
                             </svg>
-
                         </div>
                         <div>
                             <p class="mb-1 ct_text_clr_92400E">Important Information</p>
@@ -37,7 +36,6 @@
                                 customers will retain their current plan until their next billing cycle.
                             </p>
                         </div>
-
                     </div>
                 </div>
                 <form action="" class="ct_mt_30">

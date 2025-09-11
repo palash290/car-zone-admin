@@ -31,7 +31,6 @@
                             </clipPath>
                         </defs>
                     </svg>
-
                     Slot Pricing Plans
                 </h5>
                 <div class="table-responsive mt-4 ct_custom_table_main">
@@ -41,7 +40,6 @@
                                 <th>S.No</th>
                                 <th>Slot Plan</th>
                                 <th>Price (CHF)</th>
-
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
@@ -54,10 +52,10 @@
                                 <td>299.50</td>
 
                                 <td class="text-end">
-                                    <a routerLink="/home/edit-slot" class="ct_grey_text"><i
-                                            class="fa-solid fa-pen"></i></a>
+                                    <a [routerLink]="['/home/edit-slot']" [queryParams]="{ id: '2' }"
+                                        class="ct_grey_text"><i class="fa-solid fa-pen"></i></a>
                                 </td>
-                            </tr>                          
+                            </tr>
                         </tbody>
                     </table>
                 </div>

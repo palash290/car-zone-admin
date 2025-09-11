@@ -78,6 +78,27 @@ export const routes: Routes = [
                     import('./components/main/price-management/edit-listing/edit-listing.component').then(m => m.EditListingComponent)
             },
 
+            {
+                path: 'slot-request',
+                loadComponent: () =>
+                    import('./components/main/slot-request/slot-request.component').then(m => m.SlotRequestComponent)
+            },
+            {
+                path: 'slot-request-details',
+                loadComponent: () =>
+                    import('./components/main/slot-request/slot-request-details/slot-request-details.component').then(m => m.SlotRequestDetailsComponent)
+            },
+            {
+                path: 'payment-history',
+                loadComponent: () =>
+                    import('./components/main/purches/purches.component').then(m => m.PurchesComponent)
+            },
+            {
+                path: 'payment-detail',
+                loadComponent: () =>
+                    import('./components/main/purches-detail/purches-detail.component').then(m => m.PurchesDetailComponent)
+            }
+
         ]
     },
 ];

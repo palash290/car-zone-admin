@@ -105,6 +105,4 @@ export class SellerManagementComponent {
   showImg(url: any) {
     this.userImg1 = url;
   }
-
-
 }

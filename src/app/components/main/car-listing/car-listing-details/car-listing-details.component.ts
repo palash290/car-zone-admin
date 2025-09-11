@@ -4,6 +4,7 @@ import { SharedService } from '../../../../services/shared.service';
 import { CommonModule } from '@angular/common';
 import Swiper from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
+import { VideoPlayerComponent } from "../../video-player/video-player.component";
 
 Swiper.use([Navigation, Thumbs]);
 
@@ -11,7 +12,7 @@ Swiper.use([Navigation, Thumbs]);
 @Component({
   selector: 'app-car-listing-details',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, VideoPlayerComponent],
   templateUrl: './car-listing-details.component.html',
   styleUrl: './car-listing-details.component.css'
 })
