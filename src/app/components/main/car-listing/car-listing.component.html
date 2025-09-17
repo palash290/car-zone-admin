@@ -7,8 +7,7 @@
                     <div class="form-group position-relative ct_w_100_767" style="width: 300px;">
                         <input type="text"
                             class="form-control ct_input ct_inpu_h_44 ct_input_grey  ct_input_ps_40 ct_w_100_767"
-                            placeholder="Search " [(ngModel)]="searchQuery"
-                            (ngModelChange)="getBuseSchedule()">
+                            placeholder="Search " [(ngModel)]="searchQuery" (ngModelChange)="getBuseSchedule()">
                         <i class="fa-solid fa-search ct_icon_left "></i>
                     </div>
                     <div class="ct_w_100_767">
@@ -18,7 +17,6 @@
                             <option value="">All</option>
                             <option value="1">Active</option>
                             <option value="0">Expired</option>
-                            <!-- <option value="">Grace Period</option> -->
                         </select>
                     </div>
                     <div class="ct_w_100_767">
@@ -38,6 +36,7 @@
                             <th>Listed On</th>
                             <th>Car Image</th>
                             <th>Status</th>
+                            <th>MKF Car Status</th>
                             <th class="text-end">Action</th>
                         </tr>
                     </thead>
@@ -58,9 +57,44 @@
                                 }
                             </td>
                             <td>
-                                <span *ngIf="item.isActive == 1" class="ct_green_text">Active</span>
-                                <span *ngIf="item.isActive == 0" class="ct_red_text">Expired</span>
+                                <span *ngIf="item.is_active == 1" class="ct_green_text">Active</span>
+                                <span *ngIf="item.is_active == 0" class="ct_red_text">Expired</span>
                             </td>
+                            <!-- <td>
+                                <select [(ngModel)]="item.mfk_status_override" class="form-select"
+                                    (change)="onEmfStatusChange(item.id, item.mfk_status_override)">
+                                    <option value=null selected disabled>Select</option>
+                                    <option value="valid">Valid</option>
+                                    <option value="due_soon">Due Soon</option>
+                                    <option value="overdue">Overdue</option>
+                                    <option value="no_data">No Data</option>
+                                </select>
+                            </td> -->
+                            @if(item.mfk_status_override == null) {
+                            <td>
+                                <select [(ngModel)]="item.mfk_status" class="form-select w-auto"
+                                    (change)="onEmfStatusChange(item.id, item.mfk_status, item.mfk_status)">
+                                    <option [ngValue]="null" selected disabled>Select</option>
+                                    <option value="valid">Valid</option>
+                                    <option value="due_soon">Due Soon</option>
+                                    <option value="overdue">Overdue</option>
+                                    <option value="no_data">No Data</option>
+                                </select>
+                            </td>
+                            } @else {
+                            <td>
+                                <select [(ngModel)]="item.mfk_status_override" class="form-select w-auto"
+                                    (change)="onEmfStatusChange(item.id, item.mfk_status_override, item.mfk_status)">
+                                    <option [ngValue]="null" selected disabled>Select</option>
+                                    <option value="valid">Valid</option>
+                                    <option value="due_soon">Due Soon</option>
+                                    <option value="overdue">Overdue</option>
+                                    <option value="no_data">No Data</option>
+                                </select>
+                            </td>
+                            }
+
+
                             <td class="text-end">
                                 <a [routerLink]="['/home/car-listing-details']" [queryParams]="{ id: item.id }"
                                     class="ct_grey_text"><i class="fa-regular fa-eye"></i></a>

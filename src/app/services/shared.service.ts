@@ -11,12 +11,12 @@ export class SharedService {
   purches = signal<any>(null)
 
   baseUrl = 'https://13.51.226.81:4000/api/admin/';
-  //baseUrl = 'http://192.168.29.142:4009/api/admin/';
+  // baseUrl = 'http://192.168.29.142:4009/api/admin/';
 
   constructor(private http: HttpClient, private route: Router) { }
 
   setToken(token: string) {
-    localStorage.setItem('carAdminToken', token)
+    localStorage.setItem('carAdminToken', token);
   }
 
   getToken() {
