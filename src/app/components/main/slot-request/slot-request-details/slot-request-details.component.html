@@ -52,8 +52,7 @@
                             <div class="row">
                                 <div class="col-sm-5 mb-4 mb-md-0">
                                     <p class="mb-1 ct_fw_600">Approved Price</p>
-                                    <p class="ct_grey_text mb-0">{{carData?.approved_price ? carData?.approved_price :
-                                        '-'}}
+                                    <p class="ct_grey_text mb-0">{{carData?.approved_price | number:'1.2-2'}} CHF
                                     </p>
                                 </div>
                                 <!-- <div class="col-sm-5 mb-4 mb-md-0">
@@ -133,7 +132,6 @@
                     </div>
 
                     }
-
 
                     <!-- <div class="ct_outline_border ct_light_grey_bg ct_py_38 pe-0 mt-4">
                     <p class="mb-1 ct_fw_600">Admin Message</p>

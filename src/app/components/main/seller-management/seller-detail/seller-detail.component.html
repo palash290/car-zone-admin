@@ -86,6 +86,56 @@
                     </div>
                 </div>
             </form>
+
+            <h4 class="ct_fs_24 ct_fw_600 mt-5">Listed Cars</h4>
+            <div class="table-responsive ct_mt_30 ct_custom_table_main">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Car Name</th>
+                            <th>Brand Name</th>
+                            <th>Price (CHF)</th>
+                            <th>Listed On</th>
+                            <th>Car Image</th>
+                            <th>Status</th>
+                            <th class="text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                            <td>{{(p - 1) * 10 + i + 1}}</td>
+                            <td>{{item.carModel ? item.carModel : '-'}}</td>
+                            <td>{{item.brandName ? item.brandName : '-'}}</td>
+                            <td>{{item.totalPrice | number:'1.2-2' }} CHF</td>
+                            <td>{{item.createdAt | date:'dd-MM-yyyy'}}</td>
+                            <td>
+                                @if(item.carImages?.length){
+                                <img [src]="item.carImages[0]" alt="Car Image" class="ct_img_w_130"
+                                    data-bs-toggle="modal" data-bs-target="#full_view_img" />
+                                } @else {
+                                <img [src]="'assets/img/no_car.png'" alt="Car Image" class="ct_img_w_130"
+                                    data-bs-toggle="modal" data-bs-target="#full_view_img" />
+                                }
+                            </td>
+                            <td>
+                                <span *ngIf="item.status == 'active'" class="ct_green_text">Active</span>
+                                <span *ngIf="item.status == 'expired'" class="ct_red_text">Expired</span>
+                            </td>
+                            <td class="text-end">
+                                <a [routerLink]="['/home/car-listing-details']" [queryParams]="{ id: item.carId }"
+                                    class="ct_grey_text"><i class="fa-regular fa-eye"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="data?.length == 0" class="text-center">
+                <p class="ct_fs_15 mt-5">No cars found</p>
+            </div>
+            <!-- Pagination Controls -->
+            <pagination-controls class="ct_pagination_div" *ngIf="!(data?.length == 0)"
+                (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
 </div>

@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SharedService } from '../../../services/shared.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import localeDeCH from '@angular/common/locales/de-CH';
+
+registerLocaleData(localeDeCH);
 
 @Component({
   selector: 'app-car-listing',
   standalone: true,
   imports: [RouterLink, CommonModule, FormsModule, NgxPaginationModule],
   templateUrl: './car-listing.component.html',
-  styleUrl: './car-listing.component.css'
+  styleUrl: './car-listing.component.css',
+  providers: [{ provide: LOCALE_ID, useValue: 'de-CH' }],
 })
 export class CarListingComponent {
 
@@ -41,7 +45,7 @@ export class CarListingComponent {
     });
   }
 
-  onEmfStatusChange(id: number, overrideStatus: string | null, originalStatus?: string): void {
+  onEmfStatusChange(id: any, overrideStatus: string | null, originalStatus?: string): void {
     const statusToUse = overrideStatus || originalStatus;
 
     if (!statusToUse) {
@@ -58,7 +62,7 @@ export class CarListingComponent {
 
     Swal.fire({
       title: 'Are you sure?',
-      text: `You want to change EMF Car Status to "${statusLabels[statusToUse]}"?`,
+      text: `You want to change MFK Car Status to "${statusLabels[statusToUse]}"?`,
       icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -67,17 +71,20 @@ export class CarListingComponent {
       cancelButtonText: 'No'
     }).then((result) => {
       if (result.isConfirmed) {
-        const body = {
-          id: id,
-          status: statusToUse
-        };
+        // const body = {
+        //   id: id,
+        //   status: statusToUse
+        // };
+        const formURlData = new URLSearchParams()
+        formURlData.set('id', id)
+        formURlData.set('status', statusToUse)
 
-        this.service.putAPI('changeMfkCarStatus', body).subscribe({
+        this.service.putAPI('changeMfkCarStatus', formURlData.toString()).subscribe({
           next: (resp: any) => {
             this.toastr.success(resp.message || 'Status updated successfully!');
           },
           error: (err) => {
-            this.toastr.warning('Failed to update EMF Car Status');
+            this.toastr.warning('Failed to update MFK Car Status');
           }
         });
       } else {

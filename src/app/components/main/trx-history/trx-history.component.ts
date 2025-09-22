@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { SharedService } from '../../../services/shared.service';
+import { RouterLink } from '@angular/router';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -9,29 +9,27 @@ import localeDeCH from '@angular/common/locales/de-CH';
 registerLocaleData(localeDeCH);
 
 @Component({
-  selector: 'app-slot-request',
+  selector: 'app-trx-history',
   standalone: true,
   imports: [RouterLink, CommonModule, FormsModule, NgxPaginationModule],
-  templateUrl: './slot-request.component.html',
-  styleUrl: './slot-request.component.css'
+  templateUrl: './trx-history.component.html',
+  styleUrl: './trx-history.component.css'
 })
-export class SlotRequestComponent {
+export class TrxHistoryComponent {
 
   searchQuery = '';
   date: any = '';
   p: any = 1;
+  data: any;
 
   constructor(private service: SharedService) { }
 
   ngOnInit() {
-    this.getBuseSchedule();
+    this.getTrx();
   }
 
-  data: any;
-
-  getBuseSchedule() {
-    // const trimmedSearch = this.searchQuery?.trim() || '';
-    this.service.getApi(`getAllSlotRequests`).subscribe({
+  getTrx() {
+    this.service.getApi(`getTransaction-slot-summary`).subscribe({
       next: (resp: any) => {
         this.data = resp.data;
         this.filterTable();
@@ -55,11 +53,10 @@ export class SlotRequestComponent {
 
     if (this.searchQuery.trim()) {
       const keyword = this.searchQuery.trim().toLowerCase();
-      filtered = filtered.filter((item: { fullName: string; }) =>
-        (item.fullName?.toLowerCase().includes(keyword))
+      filtered = filtered.filter((item: { username: string; }) =>
+        (item.username?.toLowerCase().includes(keyword))
       );
     }
-
     this.filteredData = filtered;
   }
 

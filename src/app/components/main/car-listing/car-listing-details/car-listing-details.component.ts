@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SharedService } from '../../../../services/shared.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import Swiper from 'swiper';
 import { Navigation, Thumbs } from 'swiper/modules';
 import { VideoPlayerComponent } from "../../video-player/video-player.component";
+import localeDeCH from '@angular/common/locales/de-CH';
+import { Location } from '@angular/common';
 
+registerLocaleData(localeDeCH);
 Swiper.use([Navigation, Thumbs]);
 
 
@@ -14,7 +17,8 @@ Swiper.use([Navigation, Thumbs]);
   standalone: true,
   imports: [RouterLink, CommonModule, VideoPlayerComponent],
   templateUrl: './car-listing-details.component.html',
-  styleUrl: './car-listing-details.component.css'
+  styleUrl: './car-listing-details.component.css',
+  providers: [{ provide: LOCALE_ID, useValue: 'de-CH' }],
 })
 export class CarListingDetailsComponent {
 
@@ -23,7 +27,7 @@ export class CarListingDetailsComponent {
   thumbsSwiper: any;
 
 
-  constructor(private service: SharedService, private route: ActivatedRoute) { }
+  constructor(private service: SharedService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
     this.carId = this.route.snapshot.queryParamMap.get('id');
@@ -73,6 +77,10 @@ export class CarListingDetailsComponent {
         },
       });
     }, 2000); // or use ngZone.runOutsideAngular if needed
+  }
+
+  backClicked() {
+    this.location.back();
   }
 
 

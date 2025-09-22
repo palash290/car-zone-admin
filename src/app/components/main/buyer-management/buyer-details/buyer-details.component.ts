@@ -27,7 +27,7 @@ export class BuyerDetailsComponent {
   getBuseSchedule(carId: any) {
     this.service.getApi(`getSingleBuyer?id=${carId}`).subscribe({
       next: (resp: any) => {
-        this.carData = resp.data[0];
+        this.carData = resp.data;
       },
       error: error => {
         console.log(error.message);

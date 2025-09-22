@@ -10,11 +10,11 @@
                     <div class="d-flex align-items-center justify-content-between gap-3">
                         <div class="d-flex align-items-center gap-4">
                             <div class="ct_upload_user_profile_img">
-                                <img [src]="carData?.Profile ? carData?.Profile : 'assets/img/np_pro.png'" alt=""
+                                <img [src]="carData?.profileImage ? carData?.profileImage : 'assets/img/np_pro.png'" alt=""
                                     data-bs-toggle="modal" data-bs-target="#full_view_img">
                             </div>
                             <div>
-                                <h4 class="ct_fs_18 ct_fw_700 mb-1">{{carData?.Name}}</h4>
+                                <h4 class="ct_fs_18 ct_fw_700 mb-1">{{carData?.buyerName}}</h4>
                                 <!-- @if(carData?.isBlocked == 0){
                                 <p class="mb-0  ct_fs_14 ct_green_text"> <span class="ct_circle_dot_8 me-1"
                                         style="background-color: #008000;"></span>Active Buyer</p>
@@ -22,7 +22,6 @@
                                     <p class="mb-0  ct_fs_14 ct_green_text"> <span class="ct_circle_dot_8 me-1"
                                         style="background-color: #008000;"></span>Inactive Buyer</p>
                                 } -->
-
                             </div>
                         </div>
                     </div>
@@ -51,7 +50,7 @@
                                     </svg>
                                 </div>
                                 <p class="mb-1 ct_fw_600">Phone Number</p>
-                                <p class="ct_grey_text mb-0">{{carData?.Phone}}</p>
+                                <p class="ct_grey_text mb-0">{{carData?.phoneNumber ? carData?.phoneNumber : '-'}}</p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
@@ -75,7 +74,7 @@
                                     </svg>
                                 </div>
                                 <p class="mb-1 ct_fw_600">Email Address</p>
-                                <p class="ct_grey_text mb-0">{{carData?.Email}}</p>
+                                <p class="ct_grey_text mb-0">{{carData?.email}}</p>
                             </div>
                         </div>
                     </div>

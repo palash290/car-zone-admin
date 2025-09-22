@@ -58,7 +58,7 @@
                             <!-- <td>
                                 <p class="mb-0 ct_overlay_text">Expansion of product line..</p>
                             </td> -->
-                            <td>{{item.approved_price ? item.approved_price : 'N/A'}}</td>
+                            <td>{{item.approved_price ? item.approved_price : 'N/A'}} {{item.approved_price ? 'CHF' : ''}}</td>
                             <td>
                                 <span *ngIf="item.status == 'approved'" class="ct_green_text">Approved</span>
                                 <span *ngIf="item.status == 'pending'" class="ct_text_clr_C5A704">Pending</span>

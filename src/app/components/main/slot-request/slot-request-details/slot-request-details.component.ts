@@ -1,16 +1,20 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, LOCALE_ID, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { SharedService } from '../../../../services/shared.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import localeDeCH from '@angular/common/locales/de-CH';
+
+registerLocaleData(localeDeCH);
 
 @Component({
   selector: 'app-slot-request-details',
   standalone: true,
   imports: [RouterLink, CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './slot-request-details.component.html',
-  styleUrl: './slot-request-details.component.css'
+  styleUrl: './slot-request-details.component.css',
+  providers: [{ provide: LOCALE_ID, useValue: 'de-CH' }],
 })
 export class SlotRequestDetailsComponent {
 
@@ -75,7 +79,7 @@ export class SlotRequestDetailsComponent {
         if (resp.success == true) {
           this.toastr.success(resp.message);
           this.loading = false;
-          //this.router.navigateByUrl('');
+          this.getDetails();
           this.closeModalAccept.nativeElement.click();
         } else {
           this.toastr.warning(resp.message);

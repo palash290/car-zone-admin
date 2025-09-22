@@ -43,7 +43,6 @@ export const routes: Routes = [
                 loadComponent: () =>
                     import('./components/main/car-listing/car-listing-details/car-listing-details.component').then(m => m.CarListingDetailsComponent)
             },
-
             {
                 path: 'seller-management',
                 loadComponent: () =>
@@ -54,19 +53,16 @@ export const routes: Routes = [
                 loadComponent: () =>
                     import('./components/main/seller-management/seller-detail/seller-detail.component').then(m => m.SellerDetailComponent)
             },
-
             {
                 path: 'notifications',
                 loadComponent: () =>
                     import('./components/main/notifications/notifications.component').then(m => m.NotificationsComponent)
             },
-
             {
                 path: 'price-management',
                 loadComponent: () =>
                     import('./components/main/price-management/price-management.component').then(m => m.PriceManagementComponent)
             },
-
             {
                 path: 'edit-slot',
                 loadComponent: () =>
@@ -77,7 +73,6 @@ export const routes: Routes = [
                 loadComponent: () =>
                     import('./components/main/price-management/edit-listing/edit-listing.component').then(m => m.EditListingComponent)
             },
-
             {
                 path: 'slot-request',
                 loadComponent: () =>
@@ -97,8 +92,17 @@ export const routes: Routes = [
                 path: 'payment-detail',
                 loadComponent: () =>
                     import('./components/main/purches-detail/purches-detail.component').then(m => m.PurchesDetailComponent)
-            }
-
+            },
+            {
+                path: 'trx-history',
+                loadComponent: () =>
+                    import('./components/main/trx-history/trx-history.component').then(m => m.TrxHistoryComponent)
+            },
+            {
+                path: 'view-trx',
+                loadComponent: () =>
+                    import('./components/main/trx-history/view-trx/view-trx.component').then(m => m.ViewTrxComponent)
+            },
         ]
     },
 ];
