@@ -35,6 +35,8 @@
                             <th>Price (CHF)</th>
                             <th>Listed On</th>
                             <th>Car Image</th>
+                            <th>Leasing</th>
+                            <th>Leasing Price</th>
                             <th>Status</th>
                             <th>MFK Car Status</th>
                             <th class="text-end">Action</th>
@@ -45,7 +47,7 @@
                             <td>{{(p - 1) * 10 + i + 1}}</td>
                             <td>{{item.carModel ? item.carModel : '-'}}</td>
                             <td>{{item.brandName ? item.brandName : '-'}}</td>
-                            <td>{{item.totalPrice | number:'1.2-2' }} CHF</td>
+                            <td>{{item.totalPrice | number:'1.2-2'}} CHF</td>
                             <td>{{item.createdAt | date:'dd-MM-yyyy'}}</td>
                             <td>
                                 @if(item.carImages?.length){
@@ -55,6 +57,14 @@
                                 <img [src]="'assets/img/no_car.png'" alt="Car Image" class="ct_img_w_130"
                                     data-bs-toggle="modal" data-bs-target="#full_view_img" />
                                 }
+                            </td>
+                            <td>
+                                <span *ngIf="item.isLeasing == 1" class="">Rental</span>
+                                <span *ngIf="item.isLeasing == 0" class="">Non-Rental</span>
+                            </td>
+                            <td>
+                                <span *ngIf="item.isLeasing == 1" class="">{{item.leasingPrice | number:'1.2-2'}} CHF</span>
+                                <span *ngIf="item.isLeasing == 0" class="">-</span>
                             </td>
                             <td>
                                 <span *ngIf="item.is_active == 1" class="ct_green_text">Active</span>

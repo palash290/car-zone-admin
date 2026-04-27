@@ -175,6 +175,13 @@
                     <li class="ct_fw_300 py-2 px-2">FUEL TYPE:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.fuelType ? carData?.fuelType : '-'}}</li>
 
+                    <li class="ct_fw_300 py-2 px-2">BODY TYPE:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.body_type ? carData?.body_type : '-'}}</li>
+
+                    <li class="ct_fw_300 py-2 px-2">CONSUMPTION:</li>
+                    <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.consumption ? carData?.consumption : '-'}}
+                        {{carData?.consumption ? 'L/100KM' : ''}}</li>
+
                     <li class="ct_fw_300 py-2 px-2">Engine Type:</li>
                     <li class="ct_fw_500 bg-white py-2 px-2">{{carData?.engineType ? carData?.engineType : '-'}}</li>
                     <li class="ct_fw_300 py-2 px-2">CO2 Emission:</li>
@@ -260,13 +267,23 @@
         </div>
     </div>
 
-    <div class="mt-5 ">
+    <div class="mt-5">
         <h4 class="ct_fs_24 ct_fw_600 mb-3">Reel Video</h4>
-        <div class="video_section">
 
-            <app-video-player [videoUrl]="carData?.carReel" />
+        <div class="d-flex align-items-center justify-content-center video_section">
+
+            <!-- If reel exists, show player -->
+            <app-video-player *ngIf="carData?.carReel; else noReel" [videoUrl]="carData?.carReel">
+            </app-video-player>
+
+            <!-- Fallback message -->
+            <ng-template #noReel>
+                <div class="">
+                    <p class="text-center ct_fs_16">No reel video available.</p>
+                </div>
+            </ng-template>
+
         </div>
     </div>
+
 </div>
-<!-- "engineType": "hhhh",
-        "co2Emission": "hh", -->
